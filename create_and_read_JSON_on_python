@@ -1,0 +1,19 @@
+#Here is a file to teach you how to create and read JSON files in Python
+
+import json
+
+users_json = """{
+    "name": "John Smith",
+    "age": 30,
+    "city": "New York",
+    "isStudent": true,
+    "gpa": 3.5
+}"""
+
+with open('challenge.json','w',encoding='utf-8') as archive_json:
+    json.dump(users_json,archive_json)
+
+with open('challenge.json',encoding='utf-8') as archive_json:
+    string_users_json = json.load(archive_json) #convertendo JSON -> String
+    users_dictionary_json = json.loads(string_users_json) #Converter de String - > Dicionário Python
+    print(users_dictionary_json["city"])
